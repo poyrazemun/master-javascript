@@ -112,6 +112,28 @@ console.log(openingTimeFriday, closingTimeFriday);
 restaurant.orderDelivery({address: "Eskisehir", starterIndex: 2});
 
 
+//Spread Operator
+
+const arr = [7, 8, 9];
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+
+//Join 2 arrays:
+
+const mergedMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(mergedMenu);
+
+//Spread operator can be used with all iterables and also Objects. Iterables: arrays, strings, maps, sets.
+
+const yourName = "Jonas";
+console.log(...yourName);
+
+const newRestaurant = {foundedIn: 1998, ...restaurant, founder: "Omer"};
+console.log(newRestaurant);
+
 
 
 

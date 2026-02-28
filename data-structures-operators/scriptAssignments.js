@@ -236,6 +236,11 @@ const printBookInfo = function ({title, author, year = "year unknown"}) {
 
 printBookInfo({title: 'Algorithms', author: 'Robert Sedgewick'});
 
+const bookAuthors = [...books[0].author, ...books[1].author];
+
+const spellWord = (word) => console.log(...word);
+spellWord('JavaScript');
+
 
 
 
