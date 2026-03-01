@@ -265,5 +265,13 @@ for (const book of books) {
     book.onlineContent ?? console.log(`"${book.title}" provides no data about its online content`);
 }
 
+for (const book of books) {
+    book.edition ??= 1;
+}
+
+for (const book of books) {
+    book.highlighted &&= !(book.thirdParty.goodreads.rating < 4.2)
+}
+
 
 

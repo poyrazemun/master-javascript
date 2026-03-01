@@ -197,4 +197,33 @@ const guests1 = restaurant.numGuests ?? 10;
 console.log(guests1);
 
 
+//logical assignment operators
+
+const rest1 = {
+    name: "Capri",
+    numGuests: 0
+}
+
+const rest2 = {
+    name: "Mamri",
+    owner: "Michael"
+}
+
+//OR ASSIGNMENT OPERATOR
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+//nullish ASSIGNMENT OPERATOR (checks null or undefined!)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+//AND ASSIGNMENT OPERATOR
+rest1.owner &&= "ANONMYZED!"
+rest2.owner &&= "ANONMYZED!"
+
+console.log(rest1);
+console.log(rest2);
+
+
+
 
