@@ -252,6 +252,13 @@ const printBookAuthorsCount = (title, ...authors) => {
 }
 
 
+const hasExamplesInJava = (book) => {
+    console.log(book.programmingLanguage === "Java" || "no data available");
+}
+
+for (const book of books) {
+    book.onlineContent && console.log(`"${book.title}" provides online content`);
+}
 
 
 

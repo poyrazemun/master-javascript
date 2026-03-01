@@ -158,9 +158,43 @@ add(...ex);
 
 //Rest collects --> Takes individual elements → packs them into a collection --> Rest = pack
 
+//short circuiting:
+console.log("------ OR ---------");
+console.log(3 || "Omer"); //eger ilk value truthy ise hemen onnu yazdirir. 2. valueye bakilmaz bile. Yani 3
+
+console.log("" || "Omer");//Omer
+console.log(true || 0);//true
+console.log(undefined || null);//null
+
+//eger iki deger de falsy ise 2.yi donuyor!!!
+
+console.log(undefined || 0 || "" || "Hello" || 23 || null);//Hello yazdiracak cunku it is the first truthy value
 
 
+// restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
 
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+
+console.log("------ AND ---------");
+
+//AND operator returns the 1st falsy value.
+
+console.log(0 && "Omer");//0
+console.log("" && "Omer");//""
+console.log(true && 0);//0
+console.log(undefined && null);//undefined
+
+
+//nullish coalescing operator (??)K
+//eger ?? kullanmazsam mesela numGuests 0 olsa bile falsy value oldugu icin yine de 10 yazdirilacak.
+//bu yuzden asagidaki gibi nullish coalescing kullanmaliyim. Sadece null ve undefined olup olmadigini kontrol ediyor.
+restaurant.numGuests = 0;
+const guests1 = restaurant.numGuests ?? 10;
+console.log(guests1);
 
 
 
