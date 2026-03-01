@@ -256,8 +256,13 @@ const hasExamplesInJava = (book) => {
     console.log(book.programmingLanguage === "Java" || "no data available");
 }
 
+// for (const book of books) {
+//     book.onlineContent && console.log(`"${book.title}" provides online content`);
+// }
+
 for (const book of books) {
-    book.onlineContent && console.log(`"${book.title}" provides online content`);
+    //console.log(book.title, book.onlineContent);
+    book.onlineContent ?? console.log(`"${book.title}" provides no data about its online content`);
 }
 
 
