@@ -135,9 +135,28 @@ const newRestaurant = {foundedIn: 1998, ...restaurant, founder: "Omer"};
 console.log(newRestaurant);
 
 
+//rest pattern and parameters
+
+const [o, i, ...others] = [1, 2, 3, 4, 5];
+
+//console.log(o, i, others);
+
+const [food1, , food2, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+//console.log(food1, food2, otherFood);
+
+const add = (...numbers) => console.log(numbers);
+add(1, 2, 3);
+add(1, 2, 3, 657);
+add(1, 2, 3, 0, -98);
+
+const ex = [23, 6, 96];
+add(...ex);
 
 
+//Spread expands -> Turns a collection → into individual elements ->> Spread = unpack
 
+//Rest collects --> Takes individual elements → packs them into a collection --> Rest = pack
 
 
 

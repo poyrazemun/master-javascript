@@ -242,6 +242,16 @@ const spellWord = (word) => console.log(...word);
 spellWord('JavaScript');
 
 
+const [mainKeyword, ...rest] = books[0].keywords;
+
+const {publisher: bookPublisher, ...restOfTheBook} = books[1]
+
+
+const printBookAuthorsCount = (title, ...authors) => {
+    console.log(`The book "${title}" has ${authors.length} authors.`);
+}
+
+
 
 
 
