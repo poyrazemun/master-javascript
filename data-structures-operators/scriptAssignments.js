@@ -273,5 +273,24 @@ for (const book of books) {
     book.highlighted &&= !(book.thirdParty.goodreads.rating < 4.2)
 }
 
+let pageSum = 0;
+for (const book of books) {
+    pageSum += book.pages;
+}
 
 
+const allAuthors = [];
+
+for (const book of books) {
+    if (typeof book.author === 'string') {
+        allAuthors.push(book.author)
+    } else {
+        for (const author of book.author) {
+            allAuthors.push(author)
+        }
+    }
+}
+
+for (const [index, author] of allAuthors.entries()) {
+    console.log((index + 1) + " " + author);
+}
