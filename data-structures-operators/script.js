@@ -189,7 +189,7 @@ console.log(true && 0);//0
 console.log(undefined && null);//undefined
 
 
-//nullish coalescing operator (??)K
+//nullish coalescing operator (??)
 //eger ?? kullanmazsam mesela numGuests 0 olsa bile falsy value oldugu icin yine de 10 yazdirilacak.
 //bu yuzden asagidaki gibi nullish coalescing kullanmaliyim. Sadece null ve undefined olup olmadigini kontrol ediyor.
 restaurant.numGuests = 0;
@@ -225,5 +225,32 @@ console.log(rest1);
 console.log(rest2);
 
 
+//for of loop
+
+const fruits = ["apple", "banana", "orange"];
+
+for (const fruit of fruits) {
+    console.log(fruit);
+}
 
 
+const word = "hello";
+
+for (const char of word) {
+    console.log(char);
+}
+
+const numbers = [10, 20, 30, 40, 50];
+
+for (const num of numbers) {
+    if (num === 30) {
+        break; // stop the loop
+    }
+    console.log(num);
+}
+
+const names = ["Omer", "Fatih", "Poyraz"];
+
+for (const entry of names.entries()) {
+    console.log(entry);
+}
