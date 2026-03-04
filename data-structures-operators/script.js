@@ -254,3 +254,106 @@ const names = ["Omer", "Fatih", "Poyraz"];
 for (const entry of names.entries()) {
     console.log(entry);
 }
+
+
+//
+// OPTIONAL CHAINING EXAMPLES
+//
+
+// ---------------------------------------------
+// 1️⃣ Optional Chaining with OBJECTS
+// ---------------------------------------------
+
+const user = {
+    profile: {
+        name: "Omer",
+    },
+};
+
+// Without optional chaining → could throw an error if something is undefined:
+// user.settings.theme   ❌ (settings does not exist)
+
+// With optional chaining:
+console.log(user.settings?.theme);
+// ❗ Output: undefined
+// Explanation: JS safely checks `settings`. If it doesn't exist,
+// it stops and returns undefined instead of throwing an error.
+
+console.log(user.profile?.name);
+// ✔ Output: "Omer"
+// Explanation: `profile` exists, so it returns `name` normally.
+
+
+// ---------------------------------------------
+// 2️⃣ Optional Chaining with ARRAYS
+// ---------------------------------------------
+
+const users = [
+    {name: "John"},
+    null,
+    {name: "Sarah"},
+];
+
+console.log(users[1]?.name);
+// ❗ Output: undefined
+// Explanation: users[1] is null. Without optional chaining you'd get an error.
+// But ?. stops execution and safely returns undefined.
+
+console.log(users[2]?.name);
+// ✔ Output: "Sarah"
+
+
+// ---------------------------------------------
+// 3️⃣ Optional Chaining with METHODS
+// ---------------------------------------------
+
+const objj = {
+    greet() {
+        return "Hello!";
+    }
+};
+
+// Safe method call:
+console.log(objj.greet?.());
+// ✔ Output: "Hello!"
+// Explanation: Checks if greet exists before calling it.
+
+// Unsafe method call if method doesn't exist:
+console.log(objj.sayHi?.());
+// ❗ Output: undefined
+// Explanation: No error is thrown. JS safely returns undefined.
+
+
+// ---------------------------------------------
+// 4️⃣ Optional Chaining on DEEP NESTING
+// ---------------------------------------------
+
+const shop = {
+    products: [
+        {details: {price: 100}},
+        null,
+    ]
+};
+
+// Safe navigation through multiple layers:
+console.log(shop.products?.[0]?.details?.price);
+// ✔ Output: 100
+
+console.log(shop.products?.[1]?.details?.price);
+// ❗ Output: undefined
+// Explanation: products[1] is null → optional chaining prevents crash.
+
+
+// ---------------------------------------------
+// 5️⃣ Optional Chaining with FUNCTION RETURN VALUES
+// ---------------------------------------------
+
+function getUser() {
+    return null;
+}
+
+// If getUser() returns null, accessing .name would cause an error.
+// Optional chaining fixes that:
+console.log(getUser()?.name);
+// ❗ Output: undefined
+//
