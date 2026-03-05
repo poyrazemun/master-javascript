@@ -294,3 +294,13 @@ for (const book of books) {
 for (const [index, author] of allAuthors.entries()) {
     console.log((index + 1) + " " + author);
 }
+
+const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']]);
+bookMap.set("pages", 464);
+
+console.log(`${bookMap.get("title")} by ${bookMap.get("author")}`);
+console.log(bookMap.size);
+
+if (bookMap.has("author")) {
+    console.log("Book has author data");
+}

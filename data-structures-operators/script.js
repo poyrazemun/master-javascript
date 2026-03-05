@@ -428,22 +428,58 @@ console.log(foodsWithoutIntersectionAsArray);
 
 console.log(italianFoods.isDisjointFrom(mexicanFoods));
 
+//Map
+
+//Map and Object -> both store key–value pairs, they behave differently and are suited for different scenarios
+//Keys are converted to strings (or symbols) in Objects. But in Map, key can be any data type.
+
+const rest = new Map();
+rest.set("name", "Classico");
+rest.set(1, "Italy");
+rest.set(22, "Lisbon");
+
+console.log(rest.get("name"));
+
+//methods:
+
+console.log(rest.has("name"));
+console.log(rest.size);
+rest.delete(22);
+
+console.log(rest);
+
+//rest.clear();
 
 
+const question = new Map([
+    ["question", "What is the best programming language in the world?"],
+    [1, "C"],
+    [2, "Python"],
+    [3, "JavaScript"],
+    ["correct", 3],
+    [true, "Correct"],
+    [false, "Try Again"],
+]);
+console.log(question);
 
 
+//convert object to map
+
+const obje = {
+    name: "John",
+    age: 30,
+    city: "New York",
+};
+
+const objToMap = new Map(Object.entries(obje));
+console.log(objToMap);
 
 
-
-
-
-
-
-
-
-
-
-
+for (const [key, value] of question) {
+    if (typeof key === "number") {
+        console.log(key, value);
+    }
+}
 
 
 
