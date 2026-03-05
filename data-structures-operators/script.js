@@ -4,23 +4,6 @@
 // const flights =
 //     '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 //
-// const italianFoods = new Set([
-//     'pasta',
-//     'gnocchi',
-//     'tomatoes',
-//     'olive oil',
-//     'garlic',
-//     'basil',
-// ]);
-//
-// const mexicanFoods = new Set([
-//     'tortillas',
-//     'beans',
-//     'rice',
-//     'tomatoes',
-//     'avocado',
-//     'garlic',
-// ]);
 
 const restaurant = {
     name: 'Classico Italiano',
@@ -357,3 +340,110 @@ function getUser() {
 console.log(getUser()?.name);
 // ❗ Output: undefined
 //
+
+
+//Sets
+
+//Collection of unique values, no duplication and order of elements are not preserved.
+//sets are iterable
+
+const italianFoods = new Set([
+    'pasta',
+    'gnocchi',
+    'tomatoes',
+    'olive oil',
+    'garlic',
+    'basil',
+]);
+
+const mexicanFoods = new Set([
+    'tortillas',
+    'beans',
+    'rice',
+    'tomatoes',
+    'avocado',
+    'garlic',
+]);
+
+const ordersSet = new Set(["Pasta", "Pizza", "Pasta", 3, 8990]);
+
+console.log(ordersSet);
+
+console.log(ordersSet.size);
+console.log(ordersSet.has("Pasta"));
+
+ordersSet.add("Garlic Bread");
+
+ordersSet.delete(3);
+
+//ordersSet.clear();//delete all the elements
+
+//console.log(ordersSet);
+
+for (const any of ordersSet) {
+    console.log(any);
+}
+
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+const uniqueStaffs = new Set(staff);
+console.log(uniqueStaffs);
+
+//convert that set to Array
+const uniqueStaffArray = [...uniqueStaffs];
+console.log(uniqueStaffArray);
+
+
+//new methods of Set
+//intersection method
+const commonFoods = italianFoods.intersection(mexicanFoods);
+console.log(commonFoods);
+
+const commonFoodsAsArray = [...commonFoods];
+console.log(commonFoodsAsArray);
+
+//union method
+const combinedFoods = italianFoods.union(mexicanFoods);
+console.log(combinedFoods);
+
+const combinedFoodsAsArray = [...combinedFoods];
+console.log(combinedFoodsAsArray);
+
+//difference method -> gives all the elements which are present in the first set but not in the second one
+
+const differenceFoodItalian = italianFoods.difference(mexicanFoods);
+console.log(differenceFoodItalian);
+
+const differenceFoodItalianAsArray = [...differenceFoodItalian];
+console.log(differenceFoodItalianAsArray);
+
+//symmetric difference method -> gives all the elements which are present in the first set but not in the second one and vice versa
+
+const foodsWithoutIntersection = italianFoods.symmetricDifference(mexicanFoods);
+console.log(foodsWithoutIntersection);
+
+const foodsWithoutIntersectionAsArray = [...foodsWithoutIntersection];
+console.log(foodsWithoutIntersectionAsArray);
+
+//isDisjointFrom method -> returns true if there is no intersection between the two sets
+
+console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
