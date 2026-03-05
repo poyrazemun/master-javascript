@@ -304,3 +304,17 @@ console.log(bookMap.size);
 if (bookMap.has("author")) {
     console.log("Book has author data");
 }
+
+console.log(books[0].ISBN[6] + books[0].ISBN[4] + books[0].ISBN[9] + books[0].ISBN[8]);
+
+const quote = 'A computer once beat me at chess, but it was no match for me at kick boxing';
+
+console.log(quote.indexOf("chess"));
+
+const normalizeAuthorName = (name) => {
+    name = name.trim().toLowerCase();
+    const [firstName, lastName] = name.split(" ");
+    console.log(firstName[0].toUpperCase() + firstName.slice(1) + " " + lastName[0].toUpperCase() + lastName.slice(1));
+}
+
+normalizeAuthorName('  JuliE sussMan (Contributor)');

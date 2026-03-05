@@ -482,4 +482,76 @@ for (const [key, value] of question) {
 }
 
 
+//STRINGS
+
+const airline = "TAP Air";
+const plane = "A320";
+console.log(plane[0]);
+console.log(airline.length);
+
+console.log(airline.indexOf("Air"));
+console.log(airline.lastIndexOf("r"));
+
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 6));
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Trim spaces
+const email = " hello@world.com \n";
+console.log(email.trim());
+
+// Replace
+const price = "€288,97";
+console.log(price.replace("€", "$").replace(",", "."));
+
+// Replace all
+const announcement = "All passengers come to boarding door23. Boarding door23!";
+console.log(announcement.replaceAll("door", "gate"));
+
+// Includes / startsWith / endsWith
+console.log(airline.includes("Air"));
+console.log(airline.startsWith("TAP"));
+console.log(airline.endsWith("Air"));
+
+// Split and join
+const fullName = "Omer Fatih Poyraz";
+const nameParts = fullName.split(" ");//returns array
+console.log(nameParts);
+console.log(nameParts.join(" - "));//join method returns string
+
+// Pad
+const card = "1234";
+console.log(card.padStart(8, "*"));
+console.log(card.padEnd(19, "z"));
+
+// Repeat
+const message = "Hello! ";
+console.log(message.repeat(3));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
